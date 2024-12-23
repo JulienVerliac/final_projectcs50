@@ -1,0 +1,56 @@
+For GIT 
+
+TO CONNECT 
+	git config --global user.email "you@example.com"
+	git config --global user.name "Your Name"
+
+
+TO CHECK A BRANCH INFOS
+	To get infos on the actual branch
+		git status
+	Branch historic
+		git log
+	About the current branch
+		git branch
+
+
+TO COMMIT (Record changes on a branch)
+	To add a file '.' being the file
+		git add .
+
+	To commit with a message
+		git commit -m <"message">
+
+	To change the last commit's message
+		git commit --amend <"updated message">
+
+TO HANDLE BRANCHES
+	To create a new branch
+		git branch <new-branch-name>
+
+	To switch to the new branch
+		git checkout <new-branch-name>
+
+	To switch to the new branch
+		git switch <branch-name>
+
+	Create a new branch a switch immediatly to it
+		git checkout -b <new-branch-name>
+
+TO PUSH (Send the changes to update the current repository)
+	To push 
+		git push 
+
+TO PULL (Update local repository from the latest remote(cloud) based version) --Try to pull before editing if working with others
+	To "download" files without changing the ones on local repository 
+		git fetch 
+
+	To compare local to remote 
+		git diff master origin/master 
+
+	To pull 
+		git pull 
+
+TO MERGE(Merge the current branch to the targeted one)
+	To merge 
+		git merge <branch-to-be-merged>
