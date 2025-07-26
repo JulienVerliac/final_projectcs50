@@ -1,0 +1,100 @@
+body {
+    background-color: #343541;
+    color: #ECECF1;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #ECECF1;
+}
+
+input[type="number"], button {
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+input[type="number"] {
+    background-color: #444654;
+    color: #ECECF1;
+}
+
+button {
+    background-color: #10A37F;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #13B58F;
+}
+
+form {
+    margin-bottom: 1.5rem;
+}
+
+ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+}
+
+li {
+    background-color: #3E3F4B;
+    margin-bottom: 0.6rem;
+    padding: 0.6rem;
+    border-radius: 4px;
+}
+
+.prompt-bar {
+    display: flex;
+    align-items: center;
+    background-color: #444654;  /* fond gris sombre */
+    padding: 0.75rem;
+    border-radius: 12px;
+    gap: 0.75rem;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.prompt-bar input[type="number"] {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #3E3F4B;
+    color: #ECECF1;
+}
+
+.prompt-bar button {
+    padding: 0.6rem 1.2rem;
+    background-color: #3E3F4B;
+    color: #ECECF1;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.prompt-bar button:hover {
+    background-color: #13B58F;
+}
+
+.prompt-button {
+    background-color: #3E3F4B;
+    color: #ECECF1;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+}

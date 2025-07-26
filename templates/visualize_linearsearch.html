@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <meta charset="UTF-8">
     <title>Linear Search Visualizer</title>
 </head>
 <body>
     <!-- Landing on the page -->
-    <h1>This is how the linear search works</h1>
+    <h1>How does the linear search work?</h1>
 
-    <p>Enter a number you wish to search through an array of 8 numbers : </p>
+   <p>In computer science, linear search (or sequential search) is a method for finding a target value within a list. It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched. Linear search runs in at worst linear time and makes at most n comparisons, where n is the length of the list.</p>
+   
+    <p>Enter a number inside the domain N [1,20] you wish to search through an array of 8 numbers randomly generated : </p>
 
     <form action="/linear-search" method="post">
-        <input type="number" name="target" placeholder="Enter a number" required>
-        <button type="submit">Search</button>
+        <div class="prompt-bar"> 
+        <input type="number" min="1" max="20" name="target" placeholder="Enter a number" required>
+        <button class="prompt-button" type="submit">Search</button>
+        </div>
     </form>
 
     <!-- Action -->
@@ -30,7 +35,7 @@
                     {% endif %}
                 </li>
             {% endfor %}
-            {% if was_found %}
+            {% if was_found==True %}
                 <p>It took {{ step_count }} steps to find the number you asked for.</p>
             {% else %}
                 <p>It took {{ step_count }} steps, but the number was not found.</p>
@@ -39,7 +44,7 @@
     {% endif %}
     
     <form action="/" method="get">
-        <button type="submit">Back to Homepage</button>
+        <button class="prompt-button" type="submit">Back to Homepage</button>
     </form>
 
 </body>

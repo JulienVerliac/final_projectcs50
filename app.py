@@ -48,7 +48,6 @@ def linear_search(arr, target):
                 break
 
     step_count = len(steps)
-    was_found = True
     return steps,step_count, was_found
 
 def binary_search(arr, target):
