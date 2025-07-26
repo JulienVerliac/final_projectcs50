@@ -9,26 +9,27 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-if __name__ == "__main__":
-    app.run(debug=True)
-
 # ------
 # Routes
 # ------
 
 @app.route("/linear-search", methods=["GET","POST"])
 def vis_linear():
+    print("Route hit!")
     if request.method == "GET":
-        return render_template("visualize.html")
+        return render_template("visualize_linearsearch.html")
+    
     if request.method == "POST":
         target = request.form.get("target")
         target = int(target)
         arr = random.sample(range(1, 20), 8)
-        steps = linear_search(arr, target)
+        steps, step_count, was_found = linear_search(arr, target)
         print("Target:", target)
         print("Array:", arr)
         print("Steps:", steps)
-        return render_template("visualize.html", arr = arr, target = target, steps = steps)
+        print("Step count:", step_count)
+        print("Found:", was_found)
+        return render_template("visualize_linearsearch.html", arr = arr, target = target, steps = steps, step_count = step_count, was_found = was_found)
 
 
 # -------------------------------------------------
@@ -37,14 +38,18 @@ def vis_linear():
 
 def linear_search(arr, target):
     steps = []
+    was_found = False
+
     for i in range(len(arr)):
-        if(arr[i] == target):
-            print("The element is found at position", (i+1))
             steps.append({"index": i, "value": arr[i], "found": arr[i] == target})
-            return steps
-    print("The element is not present in the array")
-    return steps
-    
+
+            if arr[i] == target:
+                was_found = True
+                break
+
+    step_count = len(steps)
+    was_found = True
+    return steps,step_count, was_found
 
 def binary_search(arr, target):
     pass
@@ -54,3 +59,6 @@ def merge_sort(arr, target):
     pass
 def call_stack(arr, target):
     pass
+
+if __name__ == "__main__":
+    app.run(debug=True)

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linear Search Visualizer</title>
+</head>
+<body>
+    <!-- Landing on the page -->
+    <h1>This is how the linear search works</h1>
+
+    <p>Enter a number you wish to search through an array of 8 numbers : </p>
+
+    <form action="/linear-search" method="post">
+        <input type="number" name="target" placeholder="Enter a number" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Action -->
+    {% if target %}
+        <p>You searched for <strong>{{ target }}</strong> in the array: {{ arr }}</p>
+        <h2>Steps:</h2>
+        <ol>
+            {% for step in steps %}
+                <li>
+                    Index {{ step.index }} – value {{ step.value }} →
+                    {% if step.found %}
+                        ✅ Found!
+                    {% else %}
+                        ❌ Not found
+                    {% endif %}
+                </li>
+            {% endfor %}
+            {% if was_found %}
+                <p>It took {{ step_count }} steps to find the number you asked for.</p>
+            {% else %}
+                <p>It took {{ step_count }} steps, but the number was not found.</p>
+            {% endif %}
+        </ol>
+    {% endif %}
+    
+    <form action="/" method="get">
+        <button type="submit">Back to Homepage</button>
+    </form>
+
+</body>
+</html>
