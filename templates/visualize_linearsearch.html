@@ -41,6 +41,13 @@
                 <p>It took {{ step_count }} steps, but the number was not found.</p>
             {% endif %}
         </ol>
+        <div class="array-line">
+            {% for step in steps %}
+                <div class="array-box">
+                    {{ step.value }}
+                </div>
+            {% endfor %}
+        </div>
     {% endif %}
     
     <form action="/" method="get">
