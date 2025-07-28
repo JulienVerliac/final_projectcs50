@@ -51,6 +51,6 @@ TO PULL (Update local repository from the latest remote(cloud) based version) --
 	To pull 
 		git pull 
 
-TO MERGE(Merge the current branch to the targeted one)
+TO MERGE(Merge the current branch with the targeted one)
 	To merge 
 		git merge <branch-to-be-merged>
