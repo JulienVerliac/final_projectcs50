@@ -1,3 +1,10 @@
-This is the beginning of my final CS50 project for Introduction into CS.
+This is the repository fr my CS50 final project.
 
-I aim to watch seminars to start with the most appropriated tools to accomplish my final project
+This project aims to get a better understanding of a few notions we dscovered all along the course and to visualize them, these notions being :
+
+Linear search
+Binary Search
+Bubble sort
+Merge sort
+Recursion
+Call stack
