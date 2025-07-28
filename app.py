@@ -22,7 +22,7 @@ def vis_linear():
     if request.method == "POST":
         target = request.form.get("target")
         target = int(target)
-        arr = random.sample(range(1, 20), 8)
+        arr = random.sample(range(1, 16), 8)
         steps, step_count, was_found = linear_search(arr, target)
         print("Target:", target)
         print("Array:", arr)

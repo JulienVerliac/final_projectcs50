@@ -99,6 +99,8 @@ li {
     font-weight: 500;
 }
 
+/* LINEAR SEARCH CLASSES */
+
 .array-line{
     display: flex;
     gap: 1rem;
@@ -115,4 +117,31 @@ li {
     justify-content: center;
     font-size: 1.25rem;
     font-weight: bold;
+}
+
+.array-container {
+    display: flex;
+    justify-content: center;
+    background-color: #444654;
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 2rem auto;
+    width: fit-content; /* 👈 s'adapte automatiquement au contenu */
+    max-width: 95%;      /* 👈 évite le débordement sur petits écrans */
+    overflow-x: auto;    /* 👈 défilement horizontal si trop long */
+}
+
+.array-box.active {
+    background-color: #555770;
+    transition: background-color 0.3s ease;
+}
+
+.array-box.found {
+    background-color: #10A37F;
+    color: white;
+}
+
+.array-box.failed {
+    background-color: #8b0000;
+    color: white;
 }

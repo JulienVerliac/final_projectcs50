@@ -11,11 +11,11 @@
 
    <p>In computer science, linear search (or sequential search) is a method for finding a target value within a list. It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched. Linear search runs in at worst linear time and makes at most n comparisons, where n is the length of the list.</p>
    
-    <p>Enter a number inside the domain N [1,20] you wish to search through an array of 8 numbers randomly generated : </p>
+    <p>Enter a number inside the domain N [1,16] you wish to search through an array of 8 numbers randomly generated : </p>
 
     <form action="/linear-search" method="post">
         <div class="prompt-bar"> 
-        <input type="number" min="1" max="20" name="target" placeholder="Enter a number" required>
+        <input type="number" min="1" max="16" name="target" placeholder="Enter a number" required>
         <button class="prompt-button" type="submit">Search</button>
         </div>
     </form>
@@ -41,18 +41,29 @@
                 <p>It took {{ step_count }} steps, but the number was not found.</p>
             {% endif %}
         </ol>
-        <div class="array-line">
-            {% for step in steps %}
-                <div class="array-box">
-                    {{ step.value }}
-                </div>
-            {% endfor %}
+        <div class="array-container"> 
+            <div class="array-line">
+                {% for step in steps %}
+                    <div class="array-box">
+                        {{ step.value }}
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     {% endif %}
+
+    <script src="{{ url_for('static', filename='visualize_linearsearch.js') }}"></script>
     
     <form action="/" method="get">
         <button class="prompt-button" type="submit">Back to Homepage</button>
     </form>
+
+    <script>
+        window.onload = function() {
+            const target = Number("{{ target }}");
+            animateSteps(target);
+        };
+    </script>
 
 </body>
 </html>
