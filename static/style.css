@@ -32,6 +32,17 @@ button {
     transition: background-color 0.2s;
 }
 
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 button:hover {
     background-color: #13B58F;
 }
@@ -50,6 +61,17 @@ li {
     margin-bottom: 0.6rem;
     padding: 0.6rem;
     border-radius: 4px;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 .prompt-bar {
@@ -88,15 +110,18 @@ li {
 }
 
 .prompt-button {
-    background-color: #3E3F4B;
-    color: #ECECF1;
-    border: none;
     padding: 0.6rem 1.2rem;
     font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
     font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    background-color: #3E3F4B;
+    color: #ECECF1;
+    cursor: pointer;
+    width: 100%;
+    min-width: 180px;
+    max-width: 220px;
+    transition: background-color 0.2s ease;
 }
 
 /* LINEAR SEARCH CLASSES */
