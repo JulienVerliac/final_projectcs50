@@ -170,3 +170,13 @@ li {
     background-color: #8b0000;
     color: white;
 }
+
+.blink {
+    animation: blinkEffect 0.8s ease-in-out 3;
+}
+
+@keyframes blinkEffect {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.3; }
+    100% { opacity: 1; }
+}
