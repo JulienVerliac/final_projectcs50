@@ -6,10 +6,30 @@
     <title>Algorithm visualizer </title>
 </head>
 <body class="body">
-    <h1>Welcome to the algorithm visualizer !</h1>
-    <h2>Choose among the concepts you wish to visualize :</h2>
-    <form action="/linear-search" method="get">
-        <button class="prompt-button" type="submit">Linear search</button>
-    </form>
+    <section class="home-container">
+        <h1>Welcome to the algorithm visualizer !</h1>
+        <h2>Choose among the concepts you wish to visualize :</h2>
+
+        <div class="button-grid">
+            <form action="/linear-search" method="get">
+                <button class="prompt-button" type="submit">Linear search</button>
+            </form>
+            <form action="/binary-search" method="get">
+                <button class="prompt-button" type="submit">Binary search</button>
+            </form>
+            <form action="/bubble-sort" method="get">
+                <button class="prompt-button" type="submit">Bubble sort</button>
+            </form>
+            <form action="/merge-sort" method="get">
+                <button class="prompt-button" type="submit">Merge sort</button>
+            </form>
+            <form action="/recursion" method="get">
+                <button class="prompt-button" type="submit">Recursion</button>
+            </form>
+            <form action="/call-stack" method="get">
+                <button class="prompt-button" type="submit">Call stack</button>
+            </form>
+        </div>
+    </section>
 </body>
 </html>
