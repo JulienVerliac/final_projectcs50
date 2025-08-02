@@ -13,7 +13,8 @@ TO CHECK A BRANCH INFOS
 	About the current branch
 		git branch
 	Delete a branch
-		git branch -d <branch_name>
+		git push -d <remote_name> <branchname>   # Delete remote
+		git branch -d <branchname>               # Delete local
 
 
 TO COMMIT (Record changes on a branch)
