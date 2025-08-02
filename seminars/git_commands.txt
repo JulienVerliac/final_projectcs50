@@ -12,6 +12,8 @@ TO CHECK A BRANCH INFOS
 		git log
 	About the current branch
 		git branch
+	Delete a branch
+		git branch -d <branch_name>
 
 
 TO COMMIT (Record changes on a branch)
