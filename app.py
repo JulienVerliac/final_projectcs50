@@ -41,7 +41,7 @@ def vis_binary():
     if request.method == "POST":
         target = request.form.get("target")
         target = int(target)
-        arr = sorted(random.sample(range(1, 31), 10))
+        arr = sorted(random.sample(range(1, 30), 15))
         binary_steps = binary_search(arr, target)
         print("Target:", target)
         print("Array:", arr)
@@ -82,6 +82,8 @@ def binary_search(arr, target):
                 "L" : L,
                 "R" : R,
                 "mid" : mid,
+                "val_L": arr[L],
+                "val_R": arr[R],
                 "value" : arr[mid],
                 "target" : target,
                 "found" : False,
@@ -96,6 +98,8 @@ def binary_search(arr, target):
                 "L" : L,
                 "R" : R,
                 "mid" : mid,
+                "val_L": arr[L],
+                "val_R": arr[R],
                 "value" : arr[mid],
                 "target" : target,
                 "found" : False,
@@ -110,6 +114,8 @@ def binary_search(arr, target):
                 "L" : L,
                 "R" : R,
                 "mid" : mid,
+                "val_L": arr[L],
+                "val_R": arr[R],
                 "value" : arr[mid],
                 "target" : target,
                 "found" : True,

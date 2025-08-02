@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset = "UTF-8">
+    <title>Binary Search Visualizer</title>
+</head>
+<body>
+    <!-- Landing on the page -->
+     <h1>How does a binary search work ?</h1>
+
+     <p>In computer science, binary search, also known as half-interval search, logarithmic search, or binary chop, is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array; if they are unequal, the half in which the target cannot lie is eliminated and the search continues on the remaining half until it is successful. If the search ends with the remaining half being empty, the target is not in the array.</p>
+
+    <p><strong>Time Complexity: O(log(n))</strong> since we split search area by two for every next iteration.</p>
+
+     <p><i>Enter a number inside the domain N <strong>[1,30]</strong> you wish to search through a <strong>SORTED</strong> array of <strong>15</strong> numbers randomly generated : </i></p>
+
+    <form action="/binary-search" method="post">
+        <div class="prompt-bar"> 
+        <input type="number" min="1" max="30" name="target" placeholder="Enter a number" required>
+        <button class="prompt-button" type="submit">Search</button>
+        </div>
+    </form>
+
+    <!-- Action  -->
+    {% if target %}
+        <p>You searched for <strong>{{ target }}</strong> in the <strong>sorted</strong> array: {{ arr }}</p>
+
+        <div class ="binary-animation"></div>
+
+        <h2>Steps:</h2>
+        <ol>
+            {% for step in steps %}
+            <li>
+                Left index {{ step.L }},  value: {{ step.val_L}} | Right index {{ step.R }}, value {{ step.val_R}} | Mid index {{ step.mid }}, value {{ step.value }} →
+                {% if step.action == 'found' %}
+                    ✅ Found!
+                {% else %}
+                    🔁 {{ step.action | capitalize }}
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ol>
+
+        {% if was_found == True %}
+            <p>It took {{ step_count }} steps to find the number you asked for.</p>
+        {% else %}
+            <p>It took {{ step_count }} steps, but the number was not found in the entire array {{ arr }}.</p>
+            <p>Each time, we cut the array in half and searched again, until nothing remained, try again!</p>
+        {% endif %}
+    {% endif %}
+
+    <form action="/" method="get">
+        <button class="prompt-button" type="submit">Back to Homepage</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='visualize_binarysearch.js') }}"></script>
+
+    {% if steps is defined and arr is defined and target is defined %}
+    <script>
+        const stepsData = {{ steps | tojson }};
+        const arrData = {{ arr | tojson }};
+        const targetValue = {{ target | default('null') }};
+        animateStepsBinary(targetValue, stepsData, arrData);
+    </script>
+    {% endif %}
+</body>
+</html>

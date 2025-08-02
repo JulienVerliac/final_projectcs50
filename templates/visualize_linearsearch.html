@@ -9,9 +9,11 @@
     <!-- Landing on the page -->
     <h1>How does the linear search work?</h1>
 
-   <p>In computer science, linear search (or sequential search) is a method for finding a target value within a list. It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched. Linear search runs in at worst linear time and makes at most n comparisons, where n is the length of the list.</p>
+    <p>In computer science, linear search (or sequential search) is a method for finding a target value within a list. It sequentially checks each element of the list for the target value until a match is found or until all the elements have been searched. Linear search runs in at worst linear time and makes at most n comparisons, where n is the length of the list.</p>
+
+    <p><strong>Time Complexity: O(n)</strong> since in worst case we're checking each element exactly once.</p>
    
-    <p>Enter a number inside the domain N [1,16] you wish to search through an array of 8 numbers randomly generated : </p>
+    <p> <i>Enter a number inside the domain N <strong>[1,16]</strong> you wish to search through an array of <strong>8</strong> numbers randomly generated :  </i></p>
 
     <form action="/linear-search" method="post">
         <div class="prompt-bar"> 
@@ -23,6 +25,17 @@
     <!-- Action -->
     {% if target %}
         <p>You searched for <strong>{{ target }}</strong> in the array: {{ arr }}</p>
+
+        <div class="array-container"> 
+            <div class="array-line">
+                {% for step in steps %}
+                    <div class="array-box">
+                        {{ step.value }}
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
         <h2>Steps:</h2>
         <ol>
             {% for step in steps %}
@@ -41,22 +54,13 @@
                 <p>It took {{ step_count }} steps, but the number was not found.</p>
             {% endif %}
         </ol>
-        <div class="array-container"> 
-            <div class="array-line">
-                {% for step in steps %}
-                    <div class="array-box">
-                        {{ step.value }}
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
     {% endif %}
-
-    <script src="{{ url_for('static', filename='visualize_linearsearch.js') }}"></script>
     
     <form action="/" method="get">
         <button class="prompt-button" type="submit">Back to Homepage</button>
     </form>
+
+    <script src="{{ url_for('static', filename='visualize_linearsearch.js') }}"></script>
 
     <script>
         window.onload = function() {
