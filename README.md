@@ -6,4 +6,4 @@ These notions are :
 - Linear search
 - Binary Search
 - Bubble sort
-- Merge sort
+- Merge sort (concepts of recursion and call stack within)
