@@ -35,7 +35,10 @@
     </form>
     
     {% if original_array %}
-        <div class="array-container" id="array-container"></div>
+    <h2>Original Array:</h2>
+    <div class="array-display"><p>The original and unsorted array created is {{ original_array }}</p></div>
+    <div class="array-container" id="array-container"></div>
+    <div class="array-display"><p>The sorted array is now {{ array_to_sort }}</p></div>
     {% endif %}
 
     {% if original_array and sort_steps %}

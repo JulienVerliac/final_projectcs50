@@ -65,7 +65,7 @@ def vis_bubble():
         print("Original array:", original_array)
         print("Compared:", sort_steps)
         print("Array sorted:", array_to_sort)
-        return render_template("visualize_bubblesort.html", original_array = original_array, sort_steps = sort_steps)
+        return render_template("visualize_bubblesort.html", original_array = original_array, sort_steps = sort_steps, array_to_sort = array_to_sort )
 
 # -------------------------------------------------
 # Algorithms we want to visualize and we may call #
