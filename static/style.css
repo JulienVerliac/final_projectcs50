@@ -83,6 +83,7 @@ li {
     gap: 0.75rem;
     max-width: 600px;
     margin: 2rem auto;
+    justify-content: center;
 }
 
 .prompt-bar input[type="number"] {
@@ -245,4 +246,31 @@ li {
     width: 80%;
     background-color: #555;
     margin-top: 1.5rem;
+}
+
+/* Complexity grids for bubble and merge sort */
+.complexity-table {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  gap: 12px;
+  padding: 16px 24px;
+  margin: 32px auto;
+  max-width: 800px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: #444654; /* couleur fond secondaire sombre */
+  color: #f1f1f1; /* couleur texte claire */
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.complexity-table > div {
+  padding: 8px;
+  border-bottom: 1px solid #333;
+}
+
+.complexity-table > div:nth-child(-n+6) {
+  font-weight: bold;
+  border-bottom: 2px solid #666;
 }

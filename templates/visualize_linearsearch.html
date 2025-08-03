@@ -55,12 +55,6 @@
             {% endif %}
         </ol>
     {% endif %}
-    
-    <form action="/" method="get">
-        <button class="prompt-button" type="submit">Back to Homepage</button>
-    </form>
-
-    <script src="{{ url_for('static', filename='visualize_linearsearch.js') }}"></script>
 
     <script>
         window.onload = function() {
@@ -70,6 +64,12 @@
             }
         };
     </script>
+    
+    <script src="{{ url_for('static', filename='visualize_linearsearch.js') }}"></script>
+
+    <form action="/" method="get">
+        <button class="prompt-button" type="submit">Back to Homepage</button>
+    </form>
 
 </body>
 </html>

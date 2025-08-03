@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset = "UTF-8">
+    <title>Bubble Sort Visualizer</title>
+<body>
+    <!-- Landing on the page -->
+     <h1>How does a bubble sort work ?</h1>
+
+     <p>Bubble sort, sometimes referred to as "sinking sort", is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order (ascending or descending arrangement). The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted.</p>
+
+    <div class = "complexity-table">
+        <div>Name</div>
+        <div>Best</div>
+        <div>Average</div>
+        <div>Worst</div>
+        <div>Memory</div>
+        <div>Stable</div>
+
+        <div>Bubble sort</div>
+        <div>n</div>
+        <div>n²</div>
+        <div>n²</div>
+        <div>1</div>
+        <div>Yes</div>
+    </div>
+
+    <p><i>Start the animation by clicking on the button below to see how the bubble sort works on an array of <strong>6</strong> numbers inside the domain <strong>N[1,100]</strong> randomly generated :</i></p>
+
+    <form action="/bubble-sort" method="post">
+        <div style="display: flex; justify-content: center; margin-top: 2rem;"> 
+            <button class="prompt-button" name = "start" type="submit">Sort</button>
+        </div>
+    </form>
+    
+    {% if original_array %}
+        <div class="array-container" id="array-container"></div>
+    {% endif %}
+
+    {% if original_array and sort_steps %}
+    <script>
+        const originalArray = {{ original_array | tojson | safe }};
+        const steps = {{ sort_steps | tojson | safe }};
+    </script>
+    {% endif %}
+
+    <script src="{{ url_for('static', filename='visualize_bubblesort.js') }}"></script>
+    
+    <form action="/" method="get">
+        <button class="prompt-button" type="submit">Back to Homepage</button>
+    </form>
+</body>
+</head>

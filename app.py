@@ -50,6 +50,23 @@ def vis_binary():
         was_found = any(step['found'] for step in binary_steps)
         return render_template("visualize_binarysearch.html", arr = arr, target = target, steps = binary_steps, step_count = step_count, was_found = was_found)   
 
+@app.route("/bubble-sort", methods=["GET","POST"])
+def vis_bubble():
+    print("Route hit!")
+    if request.method == "GET":
+        return render_template("visualize_bubblesort.html")
+    
+    if request.method == "POST":
+        n = 6
+        array_to_sort = random.sample(range(1, 101), n)
+        original_array = array_to_sort.copy()
+
+        sort_steps = bubble_sort(array_to_sort)
+        print("Original array:", original_array)
+        print("Compared:", sort_steps)
+        print("Array sorted:", array_to_sort)
+        return render_template("visualize_bubblesort.html", original_array = original_array, sort_steps = sort_steps)
+
 # -------------------------------------------------
 # Algorithms we want to visualize and we may call #
 # -------------------------------------------------
@@ -126,11 +143,24 @@ def binary_search(arr, target):
 
     return steps
 
-def bubble_sort(arr, target):
-    pass
-def merge_sort(arr, target):
-    pass
-def call_stack(arr, target):
+def bubble_sort(arr):
+    steps = []
+    n = len(arr)
+    swapped = True
+    while swapped == True:
+        swapped = False
+        for i in range(n-1):
+            steps.append({"compared": [i, i + 1], "array": arr.copy(), "step_type": "compare"})
+            if arr[i] > arr[i + 1]:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                swapped = True
+                steps.append({"swapped_indices": [i, i + 1], "array": arr.copy(), "step_type": "swap"})
+        if not swapped:
+            break  
+        n = n - 1
+    return steps
+
+def merge_sort(arr):
     pass
 
 if __name__ == "__main__":
